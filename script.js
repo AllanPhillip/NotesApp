@@ -19,8 +19,8 @@ function addNewNote(text=''){
             <button class="delete"><i class="fas fa-trash-alt"></i></button>        
         </div> 
 
-        <div class="main ${text ? "" : "hidden"}"></div>
-        <textarea class="${text ? "hidden" : ""}"></textarea>
+        <div class="main ${text ? " " : "hidden"}"> </div>
+        <textarea class="${text ? "hidden" : " "}"></textarea>
         `
 
         const editBtn = note.querySelector('.edit')
@@ -29,7 +29,7 @@ function addNewNote(text=''){
         const textArea = note.querySelector('textarea')
 
         textArea.value = text
-        main.innerHTML = marked(text)
+        main.innerHTML = text
 
         deleteBtn.addEventListener('click', () => {
             note.remove()      
@@ -45,7 +45,7 @@ function addNewNote(text=''){
         textArea.addEventListener('input', (e) => {
             const {value} = e.target
 
-            main.innerHTML = marked(value)
+            main.innerHTML = value
 
             updateLS()
         
@@ -65,6 +65,9 @@ function updateLS() {
 
 }
 
-function marked(){
+function marked() {
+
+
+
 
 }
